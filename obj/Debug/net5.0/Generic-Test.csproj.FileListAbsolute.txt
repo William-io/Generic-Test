@@ -1,0 +1,16 @@
+C:\Users\capul\OneDrive\source\repos\Code Snippets\CSharp\Generic-Test\bin\Debug\net5.0\Generic-Test.exe
+C:\Users\capul\OneDrive\source\repos\Code Snippets\CSharp\Generic-Test\bin\Debug\net5.0\Generic-Test.deps.json
+C:\Users\capul\OneDrive\source\repos\Code Snippets\CSharp\Generic-Test\bin\Debug\net5.0\Generic-Test.runtimeconfig.json
+C:\Users\capul\OneDrive\source\repos\Code Snippets\CSharp\Generic-Test\bin\Debug\net5.0\Generic-Test.runtimeconfig.dev.json
+C:\Users\capul\OneDrive\source\repos\Code Snippets\CSharp\Generic-Test\bin\Debug\net5.0\Generic-Test.dll
+C:\Users\capul\OneDrive\source\repos\Code Snippets\CSharp\Generic-Test\bin\Debug\net5.0\ref\Generic-Test.dll
+C:\Users\capul\OneDrive\source\repos\Code Snippets\CSharp\Generic-Test\bin\Debug\net5.0\Generic-Test.pdb
+C:\Users\capul\OneDrive\source\repos\Code Snippets\CSharp\Generic-Test\obj\Debug\net5.0\Generic-Test.csprojAssemblyReference.cache
+C:\Users\capul\OneDrive\source\repos\Code Snippets\CSharp\Generic-Test\obj\Debug\net5.0\Generic-Test.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\capul\OneDrive\source\repos\Code Snippets\CSharp\Generic-Test\obj\Debug\net5.0\Generic-Test.AssemblyInfoInputs.cache
+C:\Users\capul\OneDrive\source\repos\Code Snippets\CSharp\Generic-Test\obj\Debug\net5.0\Generic-Test.AssemblyInfo.cs
+C:\Users\capul\OneDrive\source\repos\Code Snippets\CSharp\Generic-Test\obj\Debug\net5.0\Generic-Test.csproj.CoreCompileInputs.cache
+C:\Users\capul\OneDrive\source\repos\Code Snippets\CSharp\Generic-Test\obj\Debug\net5.0\Generic-Test.dll
+C:\Users\capul\OneDrive\source\repos\Code Snippets\CSharp\Generic-Test\obj\Debug\net5.0\ref\Generic-Test.dll
+C:\Users\capul\OneDrive\source\repos\Code Snippets\CSharp\Generic-Test\obj\Debug\net5.0\Generic-Test.pdb
+C:\Users\capul\OneDrive\source\repos\Code Snippets\CSharp\Generic-Test\obj\Debug\net5.0\Generic-Test.genruntimeconfig.cache
