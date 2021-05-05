@@ -2,69 +2,108 @@
 Teste com classe Generica.<br>
 Test with Generic class.
 
-## public class MakeBooking
-
-1. Em algum momento essas classes precisam ser salvas no banco de dados. <br>
-At some point these classes need to be saved to the database.
+## class Plan, Payment, Subscription & DataContext
+1. Em algum momento essas classes precisam ser salvas no banco de dados. 
 ```bash
 public class Plan{}
 public class Payment{}
 public class Subscription{}
 ```
-2. Um construtor que vai receber o numero de quartos.
+2.Método para salvar as infomações no banco de dados, onde vai funcionar tanto para pessoa, pagamento ou subscrição.
+<br>Porque ela é generica. Logo por ser generica usamos o simbolo <> e T que é um tipo. 
+<br>[entity] que são os Person,Plan e Subscription ```Note que para usar mais de um generico basta usar <T, U, V>```
+<br> e instânciar no ```var context = new DataContext<Plan, Payment, Subscription>();  
 ```bash
- public MakeBooking(int rooms)
- {
-    RoomsInUse = 0;
-    Rooms = rooms;
- }
-```
-3. Método para efetuar uma reserva numa contagem partindo de 0,1,2,3....
-```bash
-public void Bookings()
+public class DataContext<T> //Contexto de dados
 {
-    RoomsInUse++;
-    if (RoomsInUse >= Rooms)
+    public void Save(T entity)
     {
-       //Evento Fechado! Sala está cheia.
-       OnRoomSoldOut(EventArgs.Empty);
-    }
-    else
-    {
-       Console.WriteLine("Quarto Reservado!");
+        
     }
 }
 ```
-4. Criação de um [EventHandler] um manipulador de eventos, <n>
-Um evento quando todas as salas estiverem todas completas.
+3.No Program.cs quando for instanciar a classe DataContext, basta dizer de que tipo é. DataContext<Plan> ou qualquer outra.
+  <br>É só é aceito a instancia no save a classe que esteja sendo chamada no DataContext.
+  <br>e tem que passar um Plan no Save() e não é permitido usar subscrição.
 ```bash
-public event EventHandler RoomSoldOutEvent;
-
-protected virtual void OnRoomSoldOut(EventArgs test)
-{
-   EventHandler handler = RoomSoldOutEvent;
-   handler?.Invoke(this, test);
+ static void Main(string[] args)
+{                     
+   var plan = new Plan();
+   var context = new DataContext<Plan>();
+   context.Save(plan); //
 }
 ```
-5. ```No Program.cs``` Vamos ter o método que vai iniciar quantos quartos vão está disponiveis no hotel?
-<br> e o número de reservas.
+4. Classe DataContext 
 ```bash
-var room = new MakeBooking(2);
-room.RoomSoldOutEvent += room.OnRoomSoldOut;
+public class DataContext<PL, PA, S>
+{
+    public void Save(PL entity)
+    {
+        
+    }
 
-room.Bookings();
-room.Bookings();
-room.Bookings();
-room.Bookings();
-room.Bookings();
-room.Bookings();
+    public void Save(PA entity)
+    {
+
+    }
+
+    public void Save(S entity)
+    {
+
+    }
+}
 ```
+5. ```No Program.cs``` Importante! a ordem que o DataContext chama é a mesma do método Save() porque ele faz o depara. 
+```bash
+ class Program
+{
+    static void Main(string[] args)
+    {
+        var plan = new Plan();
+        var payment = new Payment();
+        var subscription = new Subscription();
+        var context = new DataContext<Plan, Payment, Subscription>();
 
+        context.Save(plan); 
+        context.Save(payment);
+        context.Save(subscription);
+    }
+}
+```
+6. Criar um limitador
+```bash
+public class DataContext<PL, PA, S>
+         
+where PL : Plan //P só pode ser do tipo Person e pode ser tanto classe como interface,
+where PA : Payment
+where S : Subscription
 
+{
+    public void Save(PL entity)
+    {
+        
+    }
+
+    public void Save(PA entity)
+    {
+
+    }
+
+    public void Save(S entity)
+    {
+
+    }
+}
+
+public interface IPlan { }
+<br>where PL : Plan ou IPlan
+<br> 
+public class Plan : IPlan {}
+
+```
 ## NOTA
 
-```EventHandler``` è um gerenciador de eventos, estando num método sem retorno e como parametro está sendo passado o delegate EventArgs
-<br>Sempre que chamar o OnRoomSoldOut vai invocar o evento RommSoldOut que está sendo delegado.
+```DataContext<>``` Você pode ter herança, implementação de interface.
 
 ```bash
 public event EventHandler RoomSoldOutEvent;

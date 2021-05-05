@@ -1,6 +1,6 @@
 ﻿namespace Generic_Test
 {
-    public class Plan
+    public class Plan : IPlan
     {
     }
 }

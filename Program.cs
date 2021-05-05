@@ -6,7 +6,15 @@ namespace Generic_Test
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+
+            var plan = new Plan();
+            var payment = new Payment();
+            var subscription = new Subscription();
+            var context = new DataContext<IPlan, Payment, Subscription>();
+
+            context.Save(plan); 
+            context.Save(payment);
+            context.Save(subscription);
         }
     }
 }
