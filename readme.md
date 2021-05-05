@@ -22,7 +22,7 @@ public class DataContext<T> //Contexto de dados
     }
 }
 ```
-3.No Program.cs quando for instanciar a classe DataContext, basta dizer de que tipo é. DataContext<Plan> ou qualquer outra.
+3. No Program.cs quando for instanciar a classe DataContext, basta dizer de que tipo é. DataContext<Plan> ou qualquer outra.
   <br>É só é aceito a instancia no save a classe que esteja sendo chamada no DataContext.
   <br>e tem que passar um Plan no Save() e não é permitido usar subscrição.
 ```bash
@@ -106,6 +106,5 @@ public class Plan : IPlan {}
 ```DataContext<>``` Você pode ter herança, implementação de interface.
 
 ```bash
-public event EventHandler RoomSoldOutEvent;
 ```
 
